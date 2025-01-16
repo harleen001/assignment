@@ -29,25 +29,25 @@ function Nav() {
       {/* For larger screens: Left-side navigation */}
       <div className="hidden lg:flex items-center ml-6">
         <button
-          className={`font-sans font-extralight text-[#0F1629] mr-12 ${activeNav === 'menu' ? 'border-b-2 border-[#0F1629]' : ''}`}
+          className={`text-[#0F1629] mr-12 ${activeNav === 'menu' ? 'border-b-2 border-[#0F1629]' : ''}`} style={{ fontFamily: 'Source Sans Pro' }}
           onClick={() => handleNavClick('menu')}
         >
           Menu
         </button>
         <button
-          className={`font-sans font-extralight text-[#0F1629] mr-12 ${activeNav === 'home' ? 'border-b-2 border-[#0F1629]' : ''}`}
+          className={` text-[#0F1629] mr-12 ${activeNav === 'home' ? 'border-b-2 border-[#0F1629]' : ''}`}style={{ fontFamily: 'Source Sans Pro' }}
           onClick={() => handleNavClick('home')}
         >
           Home Delivery
         </button>
         <button
-          className={`font-sans font-extralight text-[#0F1629] mr-12 ${activeNav === 'locate' ? 'border-b-2 border-[#0F1629]' : ''}`}
+          className={` text-[#0F1629] mr-12 ${activeNav === 'locate' ? 'border-b-2 border-[#0F1629]' : ''}`} style={{ fontFamily: 'Source Sans Pro' }}
           onClick={() => handleNavClick('locate')}
         >
           Locate Us
         </button>
         <div>
-          <button className="font-mono bg-black text-white px-8 py-2 rounded-lg mx-14  transition-all">
+          <button className=" bg-black text-white px-8 py-2 rounded-lg mx-14  transition-all" style={{ fontFamily: 'Source Sans Pro' }}>
             Explore us 
           </button>
         </div>

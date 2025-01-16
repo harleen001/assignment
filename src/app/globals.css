@@ -1,6 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/source-sans-pro');
+@import url('https://fonts.cdnfonts.com/css/barriecito');
+@import url('https://fonts.cdnfonts.com/css/handwritten');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 /* Ensure no space between images */
 
@@ -51,4 +55,6 @@ overflow-x: hidden;
   .justify-between {
     justify-content: space-between;
   }
+  
+
   

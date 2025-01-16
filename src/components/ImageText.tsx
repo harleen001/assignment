@@ -20,8 +20,8 @@ const ImageText: FC<ImageTextProps> = ({ imageUrl, title, description, link }) =
         />
       </div>
       <div className="w-full sm:w-1/2">
-        <h2 className="text-2xl font-semibold text-gray-900">{title}</h2>
-        <p className="mt-4 text-gray-700">{description}</p>
+        <h2 className="text-2xl font-semibold text-gray-900" style={{ fontFamily: 'Barriecito', color:'#013982' }} >{title} </h2>
+        <p className="mt-4 text-justify text-gray-700" style={{ fontFamily: 'Handwritten' }} >{description}</p>
         {link && (
           <a
             href={link}
@@ -29,7 +29,7 @@ const ImageText: FC<ImageTextProps> = ({ imageUrl, title, description, link }) =
             rel="noopener noreferrer"
             className="mt-4 inline-block text-blue-500 hover:underline"
           >
-            Learn More
+           
           </a>
         )}
       </div>
