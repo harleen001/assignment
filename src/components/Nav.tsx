@@ -47,8 +47,8 @@ function Nav() {
           Locate Us
         </button>
         <div>
-          <button className="font-mono bg-white text-red-700 px-8 py-2 rounded-lg mx-14 hover:bg-black hover:text-white transition-all">
-            Explore us
+          <button className="font-mono bg-black text-white px-8 py-2 rounded-lg mx-14  transition-all">
+            Explore us 
           </button>
         </div>
       </div>

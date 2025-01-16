@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /* Ensure no space between images */
+
+body,html{
+overflow-x: hidden;
+}
 .card-container {
     position: relative;
     width: 33.33%; /* 3 images per row */
