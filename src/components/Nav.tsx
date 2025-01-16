@@ -9,9 +9,14 @@ const Hamburger = dynamic(() => import('hamburger-react'), { ssr: false });
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeNav, setActiveNav] = useState<string | null>(null); // Track active section
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleNavClick = (section: string) => {
+    setActiveNav(section); // Set the active section
   };
 
   return (
@@ -23,9 +28,24 @@ function Nav() {
 
       {/* For larger screens: Left-side navigation */}
       <div className="hidden lg:flex items-center ml-6">
-        <button className="font-sans font-extralight   text-[#0F1629] mr-12">Menu</button>
-        <button className="font-sans font-extralight   text-[#0F1629] mr-12">Home Delivery</button>
-        <button className="font-sans font-extralight   text-[#0F1629] mr-12">Locate Us</button>
+        <button
+          className={`font-sans font-extralight text-[#0F1629] mr-12 ${activeNav === 'menu' ? 'border-b-2 border-[#0F1629]' : ''}`}
+          onClick={() => handleNavClick('menu')}
+        >
+          Menu
+        </button>
+        <button
+          className={`font-sans font-extralight text-[#0F1629] mr-12 ${activeNav === 'home' ? 'border-b-2 border-[#0F1629]' : ''}`}
+          onClick={() => handleNavClick('home')}
+        >
+          Home Delivery
+        </button>
+        <button
+          className={`font-sans font-extralight text-[#0F1629] mr-12 ${activeNav === 'locate' ? 'border-b-2 border-[#0F1629]' : ''}`}
+          onClick={() => handleNavClick('locate')}
+        >
+          Locate Us
+        </button>
         <div>
           <button className="font-mono bg-white text-red-700 px-8 py-2 rounded-lg mx-14 hover:bg-black hover:text-white transition-all">
             Explore us
@@ -35,9 +55,12 @@ function Nav() {
 
       {/* Right side: Additional nav items */}
       <div className="hidden lg:flex items-center mr-4">
-      <button className="font-sans font-extralight   text-[#0F1629] mr-12">Looking for something specific ?</button>
-
-      
+        <button
+          className={`font-sans font-extralight text-[#0F1629] mr-12 ${activeNav === 'specific' ? 'border-b-2 border-[#0F1629]' : ''}`}
+          onClick={() => handleNavClick('specific')}
+        >
+          Looking for something specific?
+        </button>
       </div>
 
       {/* For smaller screens */}
@@ -49,13 +72,13 @@ function Nav() {
       {isOpen && (
         <div className="lg:hidden absolute top-20 right-0 mt-2 mr-2 bg-white rounded-md shadow-md py-5">
           <div className="text-lg font-semibold text-[#0F1629] px-4 py-2">
-          <button className="font-sans font-extralight   text-[#0F1629] mr-12">Menu</button>
-        <button className="font-sans font-extralight   text-[#0F1629] mr-12">Home Delivery</button>
-        <button className="font-sans font-extralight   text-[#0F1629] mr-12">Locate Us</button>
-        <div>
-          <button className="font-mono bg-white text-red-700 px-8 py-2 rounded-lg mx-14 hover:bg-black hover:text-white transition-all">
-            Explore us
-          </button>
+            <button className="font-sans font-extralight text-[#0F1629] mr-12">Menu</button>
+            <button className="font-sans font-extralight text-[#0F1629] mr-12">Home Delivery</button>
+            <button className="font-sans font-extralight text-[#0F1629] mr-12">Locate Us</button>
+            <div>
+              <button className="font-mono bg-white text-red-700 px-8 py-2 rounded-lg mx-14 hover:bg-black hover:text-white transition-all">
+                Explore us
+              </button>
             </div>
           </div>
         </div>
